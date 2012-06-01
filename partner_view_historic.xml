@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record id="res_partner_address_historic_form" model="ir.ui.view">
+            <field name="name">res.partner.historic.form</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/notebook/page[@string='General']" position="after">
+                    <page string="Historic Address">
+                        <field name="historic_address" colspan="4"  
+                            mode="tree,form" nolabel="1"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

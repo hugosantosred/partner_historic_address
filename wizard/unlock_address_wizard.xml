@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+        <record id="view_unlock_address_wizard" model="ir.ui.view">
+            <field name="name">unlock.address.wizard.form</field>
+            <field name="model">unlock.address.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Unlock Address">
+                    <group colspan="4" col="4">
+                        <label string="Caution!" colspan="4"/>
+                        <label string="This record should be only editable if exists any spell error or to mark this address as an obsolete one" colspan="4"/>
+                        <label string="If you want to create a new address click the new button on the Contact bar"
+                            colspan="4"/>
+                    </group>
+                    <group colspan="4">
+                        <button icon="gtk-cancel" special="cancel" string="Cancel"/>
+                        <button icon="gtk-ok" string="Accept" name="unlock_address"
+                            type="object"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_view_unlock_address" model="ir.actions.act_window">
+            <field name="name">Unlock Address</field>
+            <field name="res_model">unlock.address.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_unlock_address_wizard"/>
+            <field name="target">new</field>
+        </record>
+        
+    </data>
+</openerp>
